@@ -1,8 +1,126 @@
 ---
 layout: default
 ---
-<ul class="posts">
-    {% for post in site.posts %}
-        <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
-    {% endfor %}
-</ul>
+<div role="main">
+	{% for post in paginator.posts %}
+		{% capture day %}{{ post.date | date: "%d" }}{% endcapture %}
+		{% case post.layout %}
+			{% when 'link' %}
+			<article class="link clearfix" id="{{ post.slug }}">
+					<header>
+						<h1><a href="{{ site.url }}{{ post.url }}">{{ post.title }}</a></h1>
+						<div class="date">
+							<time datetime="{{ post.date | date : "%Y-%m-%dT%H:%MZ"}}" pubdate>
+								<span class="Weekday">{{ post.date | date: "%A" }},</span>
+								<span class="FullMonth">{{ post.date | date: "%B" }}</span>
+								<span class="month">{{ post.date | date: "%b" }}</span>
+								<span class="day">{{ post.date | date: "%d" }}<span class="NumeralSuffix">{% case day %}{% when '01' or '21' or '31' %}<sup>st</sup>,{% when '02' or '22' %}<sup>nd</sup>,{% when '3' or '23' %}<sup>rd</sup>,{% else %}<sup>th</sup>,{% endcase %}</span></span>
+								<span class="year">{{ post.date | date: "%Y" }}</span>
+							</time>
+						</div>
+				</header>
+				<div class="lead">{% if post.leadtype == 'html' %} {{ post.lead }} {% else %} {{ post.lead | markdownify }} {% endif %} 
+				</div> 
+			</article>
+			<div class="separator"></div>
+		{% when 'youtube' %}
+			<article class="clearfix video" id="{{ post.slug }}">
+					<header>
+						<h1><a href="{{ site.url }}{{ post.url }}">{{ post.title }}</a></h1>
+						<div class="date">
+							<time datetime="{{ post.date | date : "%Y-%m-%dT%H:%MZ"}}" pubdate>
+								<span class="Weekday">{{ post.date | date: "%A" }},</span>
+								<span class="FullMonth">{{ post.date | date: "%B" }}</span>
+								<span class="month">{{ post.date | date: "%b" }}</span>
+								<span class="day">{{ post.date | date: "%d" }}<span class="NumeralSuffix">{% case day %}{% when '01' or '21' or '31' %}<sup>st</sup>,{% when '02' or '22' %}<sup>nd</sup>,{% when '3' or '23' %}<sup>rd</sup>,{% else %}<sup>th</sup>,{% endcase %}</span></span>
+								<span class="year">{{ post.date | date: "%Y" }}</span>
+							</time>
+						</div>
+				</header>
+				<div class="{% if post.aspect == 'old' %}four-three{% else %} widescreen{% endif %}">
+				<div class="{% if post.aspect == 'old' %}theatre-43{% else %}theatre{% endif %}">	
+				<iframe title="YouTube video player" width="540" height="334" src="http://www.youtube.com/embed/{{ post.meta }}" frameborder="0" allowfullscreen></iframe>
+				</div>
+				</div>
+				<div class="lead">{% if post.leadtype == 'html' %} {{ post.lead }} {% else %} {{ post.lead | markdownify }} {% endif %} 
+				</div> 
+			</article>
+			<div class="separator"></div>
+		{% when 'vimeo' %}
+			<article class="clearfix video" id="{{ post.slug }}">
+					<header>
+						<h1><a href="{{ site.url }}{{ post.url }}">{{ post.title }}</a></h1>
+						<div class="date">
+							<time datetime="{{ post.date | date : "%Y-%m-%dT%H:%MZ"}}" pubdate>
+								<span class="Weekday">{{ post.date | date: "%A" }},</span>
+								<span class="FullMonth">{{ post.date | date: "%B" }}</span>
+								<span class="month">{{ post.date | date: "%b" }}</span>
+								<span class="day">{{ post.date | date: "%d" }}<span class="NumeralSuffix">{% case day %}{% when '01' or '21' or '31' %}<sup>st</sup>,{% when '02' or '22' %}<sup>nd</sup>,{% when '3' or '23' %}<sup>rd</sup>,{% else %}<sup>th</sup>,{% endcase %}</span></span>
+								<span class="year">{{ post.date | date: "%Y" }}</span>
+							</time>
+						</div>
+				</header>
+				<div class="{% if post.aspect == 'old' %}four-three{% else %} widescreen{% endif %}">
+				<div class="{% if post.aspect == 'old' %}theatre-43{% else %}theatre{% endif %}">
+			<iframe src="http://player.vimeo.com/video/{{ post.meta }}?title=0&amp;byline=0&amp;portrait=0" width="540" height="405" frameborder="0"></iframe>
+			</div>
+			</div>
+				<div class="lead">{% if post.leadtype == 'html' %} {{ post.lead }} {% else %} {{ post.lead | markdownify }} {% endif %} 
+				</div> 
+				
+			</article>
+			<div class="separator"></div>
+		{% when 'feature' %}
+			<article class="clearfix feature" id="{{ post.slug }}">
+					<header>
+						<h1><a href="{{ site.url }}{{ post.url }}">{{ post.title }}</a></h1>
+						<div class="date">
+							<time datetime="{{ post.date | date : "%Y-%m-%dT%H:%MZ"}}" pubdate>
+								<span class="Weekday">{{ post.date | date: "%A" }},</span>
+								<span class="FullMonth">{{ post.date | date: "%B" }}</span>
+								<span class="month">{{ post.date | date: "%b" }}</span>
+								<span class="day">{{ post.date | date: "%d" }}<span class="NumeralSuffix">{% case day %}{% when '01' or '21' or '31' %}<sup>st</sup>,{% when '02' or '22' %}<sup>nd</sup>,{% when '3' or '23' %}<sup>rd</sup>,{% else %}<sup>th</sup>,{% endcase %}</span></span>
+								<span class="year">{{ post.date | date: "%Y" }}</span>
+							</time>
+						</div>
+				</header>
+				<div class="lead">{% if post.leadtype == 'html' %} {{ post.lead }} {% else %} {{ post.lead | markdownify }} {% endif %} 
+				</div> 
+			</article>
+			<div class="separator"></div>
+	{% else %}
+		<article class="clearfix text" id="{{ post.slug }}">
+					<header>
+						<h1><a href="{{ site.url }}{{ post.url }}">{{ post.title }}</a></h1>
+						<div class="date">
+							<time datetime="{{ post.date | date : "%Y-%m-%dT%H:%MZ"}}" pubdate>
+								<span class="Weekday">{{ post.date | date: "%A" }},</span>
+								<span class="FullMonth">{{ post.date | date: "%B" }}</span>
+								<span class="month">{{ post.date | date: "%b" }}</span>
+								<span class="day">{{ post.date | date: "%d" }}<span class="NumeralSuffix">{% case day %}{% when '01' or '21' or '31' %}<sup>st</sup>,{% when '02' or '22' %}<sup>nd</sup>,{% when '3' or '23' %}<sup>rd</sup>,{% else %}<sup>th</sup>,{% endcase %}</span></span>
+								<span class="year">{{ post.date | date: "%Y" }}</span>
+							</time>
+						</div>
+				</header>
+				<div class="lead">{% if post.leadtype == 'html' %} {{ post.lead }} {% else %} {{ post.lead | markdownify }} {% endif %} 
+				</div> 
+			</article>
+			<div class="separator"></div>
+	{% endcase %}
+	{% endfor %}
+</div>
+<footer> 
+	<nav class="clearfix">
+	{% if paginator.next_page %}
+				<a id="back" href="/page{{ paginator.next_page }}">World of Yesterday</a>
+				{% endif %}
+				
+				{% case paginator.page %}
+				{% when 1  %}
+				{% when 2  %}
+				<a id="forward" href="/">World of Tomorrow</a>
+				{% else %}
+				<a id="forward" href="/page{{ paginator.previous_page }}">World of Tomorrow</a>
+				{% endcase %} 
+	</nav>
+</footer> 
