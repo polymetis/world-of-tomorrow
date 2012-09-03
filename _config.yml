@@ -1,9 +1,19 @@
-permalink: /:year/:month/:day/:title
+permalink: pretty
 auto: false
 pygments: true
-paginate: 10
+paginate: 7
 exclude: ['public', 'bin', 'vendor', 'Gemfile', 'Gemfile.lock', 'Procfile', 'Rakefile', 'unicorn.rb', 'config.ru', 'README.md']
 destination: 'public'
+markdown: kramdown
+url: 
+assets_url: 
+
+kramdown: 
+  auto_ids: true,
+  footnote_nr: 1
+  entity_output: as_char
+  toc_levels: 1..6
+  use_coderay: false
 
 production_url: https://github.com/himynameisjonas/jekyll-heroku-unicorn
 title : jekyll + heroku + unicorn
