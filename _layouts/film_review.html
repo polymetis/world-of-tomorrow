@@ -1,0 +1,33 @@
+---
+layout: default
+---
+	{% capture day %}{{ page.date | date: "%d" }}{% endcapture %}
+	<article class="clearfix text" id="{{ page.slug }}">
+					<header>
+						<h1><a href="{{ site.url }}{{ page.url }}">{{ page.title }}</a></h1>
+						<div class="date">
+							<time datetime="{{ page.date | date : "%Y-%m-%dT%H:%MZ"}}" pubdate>
+								<span class="Weekday">{{ page.date | date: "%A" }},</span>
+								<span class="FullMonth">{{ page.date | date: "%B" }}</span>
+								<span class="month">{{ page.date | date: "%b" }}</span>
+								<span class="day">{{ page.date | date: "%d" }}<span class="NumeralSuffix">{% case day %}{% when '01' or '21' or '31' %}<sup>st</sup>,{% when '02' or '22' %}<sup>nd</sup>,{% when '3' or '23' %}<sup>rd</sup>,{% else %}<sup>th</sup>,{% endcase %}</span></span>
+								<span class="year">{{ page.date | date: "%Y" }}</span>
+							</time>
+						</div>
+				</header>
+		{{ content }}
+  				{% include comments.html %}
+			</article>
+			<div class="separator"></div>
+<footer> 
+	<nav class="clearfix">
+	{% if page.previous %}
+				<a id="back" href="{{ site.url }}{{ page.previous.url }}">{{ page.previous.title }}</a>
+				{% endif %}
+				{% if page.next %}
+						<a id="forward" href="{{ site.url }}{{ page.next.url }}">{{ page.next.title }}</a>
+					{% else %}	
+					<a id="forward" href="/">World of Tommorow</a> 
+					{% endif %}
+	</nav>
+</footer> 

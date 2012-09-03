@@ -1,0 +1,30 @@
+---
+layout: text
+title: "Kindling"
+lead: "Most people that are connected to the internet today have heard or seen something about the recent Apple [announcement](http://www.apple.com/pr/library/2011/02/15appstore.html) which is hardly surprising given the recent problem that they have had with Sony. Apple does not usually make missteps but it does happen — mobile me anyone — and I fear that this is one of them. And it's a dozy."
+slug: kindling
+tags:
+- Amazon
+- App Store
+- Apple
+- Kindle
+- Mac
+---
+
+Most people that are connected to the internet today have heard or seen something about the recent Apple [announcement](http://www.apple.com/pr/library/2011/02/15appstore.html "Apple Pr") which is hardly surprising given the recent problem that they have had with Sony. Apple does not usually make missteps but it does happen — mobile me anyone — and I fear that this is one of them. And it's a dozy.
+
+Admittedly there are some consumer advantages to the new scheme of things. Some examples would be that you can manage your subscriptions in one place, there will be an option to keep your private data from being sold, and simple purchasing in app.
+
+But ... 
+
+The 70/30 cut is quite simply unreasonable for subscriptions given the fact that they don't have to handle the bandwidth of the updates.  On the positive side they are still allowing you to buy things outside the app without the need for a fee. ﻿I will also conceded that there is a small argument that subscription styled programs should have to be paid applications so that Apple does not need to eat the cost of sending the app itself though. Still this is fight between the media providers and Apple and shouldn't concern the users all that much.
+
+Except ...
+
+This will effectively kill off a few things that gives *extra* value to the IOS product line. Having the ability to read your Kindle purchases on the Ipad or Iphone adds value to the system because it allows users to have the familarity of a common bookstore on their shiny new apple products.
+
+There is also the problem of something like [Globe 2 Go](http://globe2go.newspaperdirect.com/epaper/viewer.aspx). The subscription covers the ability to have the Globe and Mail on many devices not just Apple made devices. So why would should Apple get a monthly cut when it just happened that I started the service on an IOS device. Then again I can see the Globe and Mail just making an ultra fancy html 5 site for the Ipad and make that part of the Globe 2 Go platform.
+
+In the case of the Kindle I can see Amazon doing one of two things. Either the will make just pull the app from the store or they will make the search function so broken, in app, that people will just get it from the web store anyway.
+
+Even if Apple doesn't do anything about this many publishers will just leave the App store I don't think that it will hurt Apple all that much, similar to how nobody really cares about the current mobile me, but what I can't figure out is why the decision was made when it obviously takes some value away from Apple *products* that users buy and adds nothing except for some residual income for Apple itself. 
