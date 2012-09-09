@@ -22,10 +22,10 @@ layout: default
 <footer> 
 	<nav class="clearfix">
 	{% if page.previous %}
-				<a id="back" href="{{ site.url }}{{ page.previous.url }}">{{ page.previous.title }}</a>
+				<a id="back" href="{{ site.url }}{{ page.previous.url }}">{{ page.previous.title | strip_html }}</a>
 				{% endif %}
 				{% if page.next %}
-						<a id="forward" href="{{ site.url }}{{ page.next.url }}">{{ page.next.title }}</a>
+						<a id="forward" href="{{ site.url }}{{ page.next.url }}">{{ page.next.title | | strip_html }}</a>
 					{% else %}	
 					<a id="forward" href="/">World of Tommorow</a> 
 					{% endif %}
