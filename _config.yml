@@ -8,6 +8,12 @@ markdown: kramdown
 url: 
 assets_url: 
 
+# houndsleuth settings
+indextank_index: blog_index
+indextank_api_url: http://:Js49hPux5CzOLGe@worldoftomorrow.api.houndsleuth.com
+# these values are applied as regular expressions 
+indextank_excludes: [/index.html, /page*/index.html, /tag/*/index.html, 404.html, ^/secret/]
+
 kramdown: 
   auto_ids: true,
   footnote_nr: 1
