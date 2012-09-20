@@ -16,6 +16,12 @@ GEM
       fast-stemmer (>= 1.0.0)
     directory_watcher (1.4.1)
     excon (0.15.4)
+    faraday (0.7.6)
+      addressable (~> 2.2)
+      multipart-post (~> 1.1)
+      rack (~> 1.1)
+    faraday-stack (0.1.5)
+      faraday (>= 0.6, < 0.8)
     fast-stemmer (1.0.1)
     heroku (2.29.0)
       heroku-api (~> 0.2.13)
@@ -25,6 +31,9 @@ GEM
       rubyzip
     heroku-api (0.2.13)
       excon (~> 0.15.4)
+    indextank (1.0.12)
+      faraday-stack
+      yajl-ruby (>= 0.7.7)
     jekyll (0.11.2)
       albino (~> 1.3)
       classifier (~> 1.3)
@@ -40,7 +49,9 @@ GEM
     maruku (0.6.0)
       syntax (>= 1.0.0)
     mime-types (1.19)
+    multipart-post (1.1.5)
     netrc (0.7.5)
+    nokogiri (1.5.5)
     posix-spawn (0.3.6)
     rack (1.4.1)
     raindrops (0.10.0)
@@ -52,11 +63,14 @@ GEM
       kgio (~> 2.6)
       rack
       raindrops (~> 0.7)
+    yajl-ruby (1.1.0)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
   heroku
+  indextank
+  nokogiri
   rack-jekyll!
   unicorn
