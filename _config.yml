@@ -8,7 +8,7 @@ markdown: kramdown
 url: 
 assets_url: 
 
-# houndsleuth settings
+# houndsleuth settings blah
 indextank_index: blog_index
 indextank_api_url: http://:Js49hPux5CzOLGe@worldoftomorrow.api.houndsleuth.com
 # these values are applied as regular expressions 
